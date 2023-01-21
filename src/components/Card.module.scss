@@ -1,0 +1,159 @@
+@import '../assets/styles/index.scss';
+
+.card {
+  width: 320px;
+
+  &__content {
+    background-color: $vanil;
+    padding: 20px 50px 0px 50px;
+    border: 4px solid $blue;
+    border-radius: 12px;
+    position: relative;
+    min-height: 480px;
+    overflow: hidden;
+    cursor: pointer;
+    clip-path: polygon(45px 0, 100% 0, 100% 100%, 0 100%, 0 45px);
+    transition: border 0.3s;
+
+    &_default {
+      &:hover {
+        border: 4px solid $light-blue;
+        .card__line {
+          background: $light-blue;
+        }
+        .card__size {
+          background-color: $light-blue;
+        }
+      }
+    }
+
+    &_active {
+      border: 4px solid $pink;
+      .card__line {
+        background: $pink;
+      }
+      .card__size {
+        background-color: $pink;
+      }
+      // &:hover {
+      //   border: 4px solid $light-pink;
+      //   &::before {
+      //     background: $light-pink;
+      //   }
+
+      //   .card__size {
+      //     background-color: $light-pink;
+      //   }
+      // }
+    }
+  }
+  &__line {
+    position: absolute;
+    background: $blue;
+    height: 4px;
+    left: -26px;
+    top: 24px;
+    transform: rotate(315deg);
+    width: 79px;
+    transition: background 0.3s;
+  }
+
+  &__texts {
+  }
+
+  &__label {
+    color: $gray;
+    line-height: 19px;
+    margin-bottom: 5px;
+  }
+
+  &__brand {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  &__with {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 140px;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__size {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: $blue;
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    transition: background-color 0.3s;
+    &_active {
+      background-color: $pink;
+    }
+  }
+
+  &__amount {
+    font-size: 42px;
+
+    color: $white;
+  }
+
+  &__kilogram {
+    font-size: 21px;
+
+    color: $white;
+  }
+
+  &__image {
+    position: absolute;
+    left: -30px;
+    bottom: -91px;
+  }
+
+  &__footer {
+    margin-top: 14px;
+    text-align: center;
+    color: $white;
+    font-size: 13px;
+    min-height: 16px;
+    span {
+      transition: color 0.3s;
+      color: $blue;
+      &:hover {
+        color: $light-blue;
+        .card__button {
+          color: $light-blue;
+          border-bottom: 1px dashed $light-blue;
+        }
+      }
+    }
+  }
+  &__button {
+    transition: all 0.3s;
+    color: $blue;
+    border-bottom: 1px dashed $blue;
+    cursor: pointer;
+    background: transparent;
+  }
+  &__ended {
+    font-size: 13px;
+    text-align: center;
+    color: $yellow;
+  }
+}

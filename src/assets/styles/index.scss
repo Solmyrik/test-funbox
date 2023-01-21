@@ -1,0 +1,48 @@
+@import 'reset';
+@import 'variables';
+
+body {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Trebuchet MS';
+  background-image: url('../img/bg.png');
+  height: 100%;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0px 15px;
+  justify-content: center;
+}
+
+.cats {
+  @media (max-width: 1030px) {
+    padding: 20px 0px;
+  }
+
+  &__title {
+    font-family: 'Exo';
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: $white;
+    margin-bottom: 24px;
+    @media (max-width: 489px) {
+      font-size: 24px;
+    }
+  }
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 40px;
+    @media (max-width: 1030px) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}
